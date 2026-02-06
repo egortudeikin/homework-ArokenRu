@@ -1,0 +1,17 @@
+table {
+    border-spacing: 0;
+    border-collapse: collapse;
+}
+
+td, th, caption {
+    border: 1px solid #000;
+}
+
+caption {
+    border-bottom: none;
+    font-weight: 700;
+}
+
+.weekend, .ch-weekend {
+    color: red;
+}
