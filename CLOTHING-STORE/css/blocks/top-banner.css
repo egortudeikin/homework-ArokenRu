@@ -33,6 +33,7 @@
   text-decoration: underline;
   text-decoration-skip-ink: none;
   color: var(--secondary-color);
+  transition: color var(--transition-time);
 }
 
 @media (width <= 768px) {
@@ -45,8 +46,17 @@
   grid-column: 3;
   justify-self: end;
   cursor: pointer;
+  color: var(--secondary-color);
+  transition: color var(--transition-time);
 }
 
 .top-banner--close {
   display: none;
+}
+
+@media (any-hover: hover) {
+  .top-banner__link:hover,
+  .top-banner__close-button:hover {
+    color: var(--accent-color-1);
+  }
 }

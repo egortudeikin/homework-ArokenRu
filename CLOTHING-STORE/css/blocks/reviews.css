@@ -63,6 +63,13 @@
   border: none;
   background: transparent;
   cursor: pointer;
+  transition: color var(--transition-time);
+}
+
+@media (any-hover: hover) {
+  .reviews__arrow-button:hover {
+    color: var(--accent-color-1);
+  }
 }
 
 .reviews__arrow--next {

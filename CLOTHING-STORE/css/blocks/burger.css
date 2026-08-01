@@ -13,6 +13,7 @@
     z-index: var(--layer-3);
     width: 24px;
     height: 24px;
+    transition: color var(--transition-time);
   }
 
   .burger__icon-menu,
@@ -23,5 +24,11 @@
   .burger__icon-cross,
   .burger--open .burger__icon-menu {
     display: none;
+  }
+}
+
+@media (any-hover: hover) {
+  .burger:hover {
+    color: var(--accent-color-1);
   }
 }

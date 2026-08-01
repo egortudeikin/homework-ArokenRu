@@ -90,6 +90,8 @@
 }
 
 .hero__button {
+  position: relative;
+  overflow: hidden;
   border-radius: 62px;
   padding: 16px 54px;
   background: var(--main-color);
@@ -97,11 +99,22 @@
   /* min-width 390px, max-width 1440px */
   margin-bottom: clamp(20px, 0.6rem + 2.67vw, 48px);
   white-space: nowrap;
-  transform:
-    color var(--transition-color),
-    outline var(--transition-color),
-    background var(--transition-color),
-    box-shadow var(--transition-color);
+  transition:
+    background-color var(--transition-time),
+    color var(--transition-time),
+    outline var(--transition-time)
+}
+
+.hero__button::before {
+  content: "";
+  position: absolute;
+  width: 30px;
+  height: 100%;
+  top: 0;
+  left: -50px;
+  background-color: var(--glare-color);
+  transform: skewX(-20deg);
+  animation: none;
 }
 
 @media (width > 768px) {
@@ -128,10 +141,23 @@
 
 @media (any-hover: hover) {
   .hero__button:hover {
-    color: var(--main-color);
-    outline: 2px solid var(--main-color);
-    background: var(--secondary-color);
-    box-shadow: var(--shadow-glow);
+    background-color: var(--accent-color-2);
+    color: var(--text-color);
+    outline: 2px solid var(--border-color);
+  }
+
+  .hero__button:hover::before {
+    animation: shine 1s;
+  }
+}
+
+@keyframes shine {
+  0% {
+    left: -50px;
+  }
+
+  100% {
+    left: 110%;
   }
 }
 
