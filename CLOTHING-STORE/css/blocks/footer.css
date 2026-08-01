@@ -103,7 +103,7 @@
   font-family: var(--font-family);
   font-weight: 400;
   font-size: 16px;
-  color: var(--text-disabled-color);
+  color: var(--main-color);
 }
 
 .footer__form-button {
