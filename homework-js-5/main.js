@@ -24,7 +24,7 @@ const person2 = {
 };
 
 person2.isEmpty(name);
-// person2.isEmpty(work); Не работает (выдаёт ошибку "work is not defined")
+person2.isEmpty(work); // Не работает (выдаёт ошибку "work is not defined")
 
 // Задача 3
 const task = {
