@@ -14,17 +14,19 @@ const person2 = {
   name: "Егор",
   age: 18,
   isStudent: true,
-  isEmpty: (obj) => {
-    if(obj in person2) {
-      return false;
-    } else {
-      return true;
-    }
-  }
 };
 
-person2.isEmpty(name);
-person2.isEmpty(work); // Не работает (выдаёт ошибку "work is not defined")
+const test = {};
+
+const isEmpty = (obj) => {
+  for (const key in obj) {
+    return false;
+  }
+  return true;
+};
+
+console.log(isEmpty(person2));
+console.log(isEmpty(test));
 
 // Задача 3
 const task = {
@@ -34,16 +36,36 @@ const task = {
 }
 
 const cloneAndModify = (object, modifications) => {
-  object = {...task};
-  object.title = modifications;
+  return { ...object, ...modifications };
+};
 
-  return object;
+const task2 = cloneAndModify(task, { title: "Характеристики товара", description: "Характеристики", isCompleted: false, });
+
+for (const key in task) {
+  console.log(`${key}:`, task[key]);
 }
 
-cloneAndModify(task2, "Характеристики товара");
-
 for (const key in task2) {
-  console.log(task2.key);
+  console.log(`${key}:`, task2[key]);
 }
 
 // Задача 4
+function callAllMethods(object) {
+  for (const key in object) {
+    if (typeof object[key] === "function") {
+      object[key]();
+    }
+  }
+}
+
+const myObject = {
+  method1() {
+    console.log("Метод 1 вызван");
+  },
+  method2() {
+    console.log("Метод 2 вызван");
+  },
+  property: "Это не метод",
+};
+
+callAllMethods(myObject);
