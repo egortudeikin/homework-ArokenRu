@@ -55,11 +55,12 @@ const todosElement = document.querySelector(".todos");
 const createTodoElement = (text) => {
   const todoElement = document.createElement("li");
   todoElement.classList.add("todo");
-  todoElement.innerHTML = `<div class="todo-text">Задача ${text}</div>
-          <div class="todo-actions">
-            <button class="button-complete button">&#10004;</button>
-            <button class="button-delete button">&#10006;</button>
-          </div>`;
+  todoElement.innerHTML = `
+  <div class="todo-text">${text}</div>
+  <div class="todo-actions">
+    <button class="button-complete button">&#10004;</button>
+    <button class="button-delete button">&#10006;</button>
+  </div>`;
   todosElement.append(todoElement);
 };
 
